@@ -19,7 +19,7 @@ namespace Persistence.Repository
         //private readonly IHttpContextAccessor _httpContext;
         private IFileService _file;
 
-        private readonly ISortHelper<Dimploma> _dimplomaSortHelper;
+        private readonly ISortHelper<Diploma> _diplomaSortHelper;
         private readonly ISortHelper<Graduate> _graduateSortHelper;
         private readonly ISortHelper<Student> _studentSortHelper;
 
@@ -28,7 +28,7 @@ namespace Persistence.Repository
 
         private readonly ApplicationDbContext _appDbContext;
 
-        private IDimplomaRepository _dimploma;
+        private IDiplomaRepository _diploma;
         private IGraduateRepository _graduate;
         private IStudentRepository _student;
 
@@ -53,15 +53,15 @@ namespace Persistence.Repository
         }
 
 
-        public IDimplomaRepository Dimploma
+        public IDiplomaRepository Diploma
         {
             get
             {
-                if (_dimploma == null)
+                if (_diploma == null)
                 {
-                    _dimploma = new DimplomaRepository(_appDbContext, _dimplomaSortHelper);
+                    _diploma = new DiplomaRepository(_appDbContext, _diplomaSortHelper);
                 }
-                return _dimploma;
+                return _diploma;
             }
         }
 
@@ -101,7 +101,7 @@ namespace Persistence.Repository
             IConfiguration configuration,
             IOptions<EmailSettings> mailSettings,
             IOptions<JWTSettings> jwtSettings,
-            ISortHelper<Dimploma> dimplomaSortHelper,
+            ISortHelper<Diploma> diplomaSortHelper,
             ISortHelper<Graduate> graduateSortHelper,
             ISortHelper<Student> studentSortHelper
             //IHttpContextAccessor httpContextAccessor
@@ -112,7 +112,7 @@ namespace Persistence.Repository
             _jwtSettings = jwtSettings;
             _appDbContext = appDbContext;
 
-            _dimplomaSortHelper = dimplomaSortHelper;
+            _diplomaSortHelper = diplomaSortHelper;
             _graduateSortHelper = graduateSortHelper;
             _studentSortHelper = studentSortHelper;
 

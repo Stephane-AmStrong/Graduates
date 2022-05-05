@@ -14,7 +14,7 @@ namespace Application.Features.Graduates.Commands.Update
     {
         public Guid Id { get; set; }
         public DateTime GraduateAt { get; set; }
-        public Guid DimplomaId { get; set; }
+        public Guid DiplomaId { get; set; }
         public Guid StudentId { get; set; }
     }
 

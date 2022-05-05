@@ -27,7 +27,7 @@ namespace Application.Features.Graduates.Commands.Update
                 .NotNull()
                 .Must(BeAValidDate).WithMessage("{PropertyName} is not valid.");
 
-            RuleFor(p => p.DimplomaId)
+            RuleFor(p => p.DiplomaId)
                 .NotEmpty().WithMessage("{PropertyName} is required.")
                 .NotNull()
                 .Must(BeAValidGuid).WithMessage("{PropertyName} is not valid.");

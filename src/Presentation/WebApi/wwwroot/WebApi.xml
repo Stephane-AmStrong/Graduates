@@ -4,40 +4,40 @@
         <name>WebApi</name>
     </assembly>
     <members>
-        <member name="M:WebApi.Controllers.v1.DimplomasController.Get(Application.Features.Dimplomas.Queries.GetPagedList.GetDimplomasQuery)">
+        <member name="M:WebApi.Controllers.v1.DiplomasController.Get(Application.Features.Diplomas.Queries.GetPagedList.GetDiplomasQuery)">
             <summary>
-            return dimplomas that matche the criteria
+            return diplomas that matche the criteria
             </summary>
-            <param name="dimplomasQuery"></param>
+            <param name="diplomasQuery"></param>
             <returns></returns>
         </member>
-        <member name="M:WebApi.Controllers.v1.DimplomasController.Get(System.Guid)">
+        <member name="M:WebApi.Controllers.v1.DiplomasController.Get(System.Guid)">
             <summary>
-            Retreives a specific Dimploma.
+            Retreives a specific Diploma.
             </summary>
             <param name="id"></param>
             <returns></returns>
         </member>
-        <member name="M:WebApi.Controllers.v1.DimplomasController.Post(Application.Features.Dimplomas.Commands.Create.CreateDimplomaCommand)">
+        <member name="M:WebApi.Controllers.v1.DiplomasController.Post(Application.Features.Diplomas.Commands.Create.CreateDiplomaCommand)">
             <summary>
-            Creates a Dimploma.
+            Creates a Diploma.
             </summary>
             <param name="command"></param>
-            <returns>A newly created Dimploma</returns>
+            <returns>A newly created Diploma</returns>
             <response code="201">Returns the newly created command</response>
             <response code="400">If the command is null</response>            
         </member>
-        <member name="M:WebApi.Controllers.v1.DimplomasController.Put(System.Guid,Application.Features.Dimplomas.Commands.Update.UpdateDimplomaCommand)">
+        <member name="M:WebApi.Controllers.v1.DiplomasController.Put(System.Guid,Application.Features.Diplomas.Commands.Update.UpdateDiplomaCommand)">
             <summary>
-            Update a specific Dimploma.
+            Update a specific Diploma.
             </summary>
             <param name="id"></param>
             <param name="command"></param>
             <returns></returns>
         </member>
-        <member name="M:WebApi.Controllers.v1.DimplomasController.Delete(System.Guid)">
+        <member name="M:WebApi.Controllers.v1.DiplomasController.Delete(System.Guid)">
             <summary>
-            Deletes a specific Dimploma.
+            Deletes a specific Diploma.
             </summary>
             <param name="id"></param>
             <returns></returns>

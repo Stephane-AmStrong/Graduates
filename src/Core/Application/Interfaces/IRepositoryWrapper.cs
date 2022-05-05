@@ -4,7 +4,7 @@ namespace Application.Interfaces
 {
     public interface IRepositoryWrapper
     {
-        IDimplomaRepository Dimploma { get; }
+        IDiplomaRepository Diploma { get; }
         IGraduateRepository Graduate { get; }
         IStudentRepository Student { get; }
         IFileService File { get; }

@@ -5,14 +5,14 @@ using FluentValidation;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Application.Features.Dimplomas.Commands.Create
+namespace Application.Features.Diplomas.Commands.Create
 {
-    public class CreateDimplomaCommandValidator : AbstractValidator<CreateDimplomaCommand>
+    public class CreateDiplomaCommandValidator : AbstractValidator<CreateDiplomaCommand>
     {
         private readonly IRepositoryWrapper _repository;
         private readonly IMapper _mapper;
 
-        public CreateDimplomaCommandValidator(IRepositoryWrapper repository, IMapper mapper)
+        public CreateDiplomaCommandValidator(IRepositoryWrapper repository, IMapper mapper)
         {
             _repository = repository;
             _mapper = mapper;
@@ -26,10 +26,10 @@ namespace Application.Features.Dimplomas.Commands.Create
                 .MustAsync(IsUnique).WithMessage("{PropertyName} already exists.");
         }
 
-        private async Task<bool> IsUnique(CreateDimplomaCommand dimplomaCommand, CancellationToken cancellationToken)
+        private async Task<bool> IsUnique(CreateDiplomaCommand diplomaCommand, CancellationToken cancellationToken)
         {
-            var dimploma = _mapper.Map<Dimploma>(dimplomaCommand);
-            return !(await _repository.Dimploma.ExistAsync(dimploma));
+            var diploma = _mapper.Map<Diploma>(diplomaCommand);
+            return !(await _repository.Diploma.ExistAsync(diploma));
         }
     }
 }

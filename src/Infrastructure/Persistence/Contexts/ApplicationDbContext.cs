@@ -22,7 +22,7 @@ namespace Persistence.Contexts
         }
 
 
-        public DbSet<Dimploma> Dimplomas { get; set; }
+        public DbSet<Diploma> Diplomas { get; set; }
         public DbSet<Graduate> Graduates { get; set; }
         public DbSet<Student> Students { get; set; }
 

@@ -47,7 +47,7 @@ namespace Persistence.Repository
         public async Task<Graduate> GetByIdAsync(Guid id)
         {
             return await BaseFindByCondition(graduate => graduate.Id.Equals(id))
-                .Include(x => x.Dimploma)
+                .Include(x => x.Diploma)
                 .Include(x => x.Student)
                 .FirstOrDefaultAsync();
         }
@@ -55,7 +55,7 @@ namespace Persistence.Repository
 
         public async Task<bool> ExistAsync(Graduate graduate)
         {
-            return await BaseFindByCondition(x => x.DimplomaId == graduate.DimplomaId && x.StudentId == graduate.StudentId)
+            return await BaseFindByCondition(x => x.DiplomaId == graduate.DiplomaId && x.StudentId == graduate.StudentId)
                 .AnyAsync();
         }
 

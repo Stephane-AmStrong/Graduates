@@ -13,7 +13,7 @@ namespace Application.Features.Graduates.Commands.Create
     public class CreateGraduateCommand : IRequest<GraduateViewModel>
     {
         public DateTime GraduateAt { get; set; }
-        public Guid DimplomaId { get; set; }
+        public Guid DiplomaId { get; set; }
         public Guid StudentId { get; set; }
 
     }

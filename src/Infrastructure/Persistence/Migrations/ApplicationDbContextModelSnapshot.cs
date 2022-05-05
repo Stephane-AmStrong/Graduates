@@ -22,7 +22,7 @@ namespace Persistence.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
-            modelBuilder.Entity("Domain.Entities.Dimploma", b =>
+            modelBuilder.Entity("Domain.Entities.Diploma", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -43,7 +43,7 @@ namespace Persistence.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Dimplomas");
+                    b.ToTable("Diplomas");
                 });
 
             modelBuilder.Entity("Domain.Entities.Graduate", b =>
@@ -55,7 +55,7 @@ namespace Persistence.Migrations
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
-                    b.Property<Guid>("DimplomaId")
+                    b.Property<Guid>("DiplomaId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("GraduateAt")
@@ -69,7 +69,7 @@ namespace Persistence.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("DimplomaId");
+                    b.HasIndex("DiplomaId");
 
                     b.HasIndex("StudentId");
 
@@ -88,14 +88,11 @@ namespace Persistence.Migrations
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
-                    b.Property<Guid?>("DimplomaId")
+                    b.Property<Guid?>("DiplomaId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("FirstName")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("ImgLink")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("LastName")
@@ -107,16 +104,16 @@ namespace Persistence.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("DimplomaId");
+                    b.HasIndex("DiplomaId");
 
                     b.ToTable("Students");
                 });
 
             modelBuilder.Entity("Domain.Entities.Graduate", b =>
                 {
-                    b.HasOne("Domain.Entities.Dimploma", "Dimploma")
+                    b.HasOne("Domain.Entities.Diploma", "Diploma")
                         .WithMany()
-                        .HasForeignKey("DimplomaId")
+                        .HasForeignKey("DiplomaId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -126,19 +123,19 @@ namespace Persistence.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Dimploma");
+                    b.Navigation("Diploma");
 
                     b.Navigation("Student");
                 });
 
             modelBuilder.Entity("Domain.Entities.Student", b =>
                 {
-                    b.HasOne("Domain.Entities.Dimploma", null)
+                    b.HasOne("Domain.Entities.Diploma", null)
                         .WithMany("Students")
-                        .HasForeignKey("DimplomaId");
+                        .HasForeignKey("DiplomaId");
                 });
 
-            modelBuilder.Entity("Domain.Entities.Dimploma", b =>
+            modelBuilder.Entity("Domain.Entities.Diploma", b =>
                 {
                     b.Navigation("Students");
                 });

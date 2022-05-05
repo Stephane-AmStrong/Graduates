@@ -5,14 +5,14 @@ using FluentValidation;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Application.Features.Dimplomas.Commands.Update
+namespace Application.Features.Diplomas.Commands.Update
 {
-    public class UpdateDimplomaCommandValidator : AbstractValidator<UpdateDimplomaCommand>
+    public class UpdateDiplomaCommandValidator : AbstractValidator<UpdateDiplomaCommand>
     {
         private readonly IRepositoryWrapper _repository;
         private readonly IMapper _mapper;
 
-        public UpdateDimplomaCommandValidator(IRepositoryWrapper repository, IMapper mapper)
+        public UpdateDiplomaCommandValidator(IRepositoryWrapper repository, IMapper mapper)
         {
             _repository = repository;
             _mapper = mapper;

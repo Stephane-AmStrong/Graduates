@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace Domain.Entities
 {
-    public record Dimploma : AuditableBaseEntity
+    public record Diploma : AuditableBaseEntity
     {
-        public Dimploma()
+        public Diploma()
         {
             Students = new HashSet<Student>();
         }

@@ -11,12 +11,12 @@ namespace Domain.Entities
         [Required]
         public DateTime GraduateAt { get; set; }
         [Required]
-        public Guid DimplomaId { get; set; }
+        public Guid DiplomaId { get; set; }
         [Required]
         public Guid StudentId { get; set; }
 
-        [ForeignKey("DimplomaId")]
-        public virtual Dimploma Dimploma { get; set; }
+        [ForeignKey("DiplomaId")]
+        public virtual Diploma Diploma { get; set; }
 
         [ForeignKey("StudentId")]
         public virtual Student Student { get; set; }

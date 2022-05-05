@@ -1,7 +1,7 @@
-﻿using Application.Features.Dimplomas.Commands.Create;
-using Application.Features.Dimplomas.Commands.Update;
-using Application.Features.Dimplomas.Queries.GetById;
-using Application.Features.Dimplomas.Queries.GetPagedList;
+﻿using Application.Features.Diplomas.Commands.Create;
+using Application.Features.Diplomas.Commands.Update;
+using Application.Features.Diplomas.Queries.GetById;
+using Application.Features.Diplomas.Queries.GetPagedList;
 using Application.Features.Graduates.Commands.Create;
 using Application.Features.Graduates.Commands.Update;
 using Application.Features.Graduates.Queries.GetById;
@@ -26,10 +26,10 @@ namespace Application.Mappings
     {
         public MappingProfile()
         {
-            CreateMap<Dimploma, CreateDimplomaCommand>().ReverseMap();
-            CreateMap<Dimploma, DimplomaViewModel>().ReverseMap();
-            CreateMap<Dimploma, DimplomasViewModel>().ReverseMap();
-            CreateMap<Dimploma, UpdateDimplomaCommand>().ReverseMap();
+            CreateMap<Diploma, CreateDiplomaCommand>().ReverseMap();
+            CreateMap<Diploma, DiplomaViewModel>().ReverseMap();
+            CreateMap<Diploma, DiplomasViewModel>().ReverseMap();
+            CreateMap<Diploma, UpdateDiplomaCommand>().ReverseMap();
 
             CreateMap<Graduate, CreateGraduateCommand>().ReverseMap();
             CreateMap<Graduate, GraduateViewModel>().ReverseMap();

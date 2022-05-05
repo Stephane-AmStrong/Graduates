@@ -5,12 +5,12 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Persistence.Migrations
 {
-    public partial class InitialPersistenceMigration : Migration
+    public partial class InitialApplicationDbContextMigration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Dimplomas",
+                name: "Diplomas",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
@@ -21,7 +21,7 @@ namespace Persistence.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Dimplomas", x => x.Id);
+                    table.PrimaryKey("PK_Diplomas", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -29,11 +29,10 @@ namespace Persistence.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    ImgLink = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     FirstName = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     LastName = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Birthday = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    DimplomaId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
+                    DiplomaId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
                     CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
                     UpdatedAt = table.Column<DateTime>(type: "datetime2", nullable: true)
                 },
@@ -41,9 +40,9 @@ namespace Persistence.Migrations
                 {
                     table.PrimaryKey("PK_Students", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Students_Dimplomas_DimplomaId",
-                        column: x => x.DimplomaId,
-                        principalTable: "Dimplomas",
+                        name: "FK_Students_Diplomas_DiplomaId",
+                        column: x => x.DiplomaId,
+                        principalTable: "Diplomas",
                         principalColumn: "Id");
                 });
 
@@ -52,8 +51,8 @@ namespace Persistence.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    DimplomaId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    GraduateAt = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    DiplomaId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     StudentId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
                     UpdatedAt = table.Column<DateTime>(type: "datetime2", nullable: true)
@@ -62,9 +61,9 @@ namespace Persistence.Migrations
                 {
                     table.PrimaryKey("PK_Graduates", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Graduates_Dimplomas_DimplomaId",
-                        column: x => x.DimplomaId,
-                        principalTable: "Dimplomas",
+                        name: "FK_Graduates_Diplomas_DiplomaId",
+                        column: x => x.DiplomaId,
+                        principalTable: "Diplomas",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
@@ -76,9 +75,9 @@ namespace Persistence.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Graduates_DimplomaId",
+                name: "IX_Graduates_DiplomaId",
                 table: "Graduates",
-                column: "DimplomaId");
+                column: "DiplomaId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Graduates_StudentId",
@@ -86,9 +85,9 @@ namespace Persistence.Migrations
                 column: "StudentId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Students_DimplomaId",
+                name: "IX_Students_DiplomaId",
                 table: "Students",
-                column: "DimplomaId");
+                column: "DiplomaId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -100,7 +99,7 @@ namespace Persistence.Migrations
                 name: "Students");
 
             migrationBuilder.DropTable(
-                name: "Dimplomas");
+                name: "Diplomas");
         }
     }
 }

@@ -23,7 +23,7 @@ namespace Persistence
 
 
             #region Repositories
-            services.AddScoped<ISortHelper<Dimploma>, SortHelper<Dimploma>>();
+            services.AddScoped<ISortHelper<Diploma>, SortHelper<Diploma>>();
             services.AddScoped<ISortHelper<Graduate>, SortHelper<Graduate>>();
             services.AddScoped<ISortHelper<Student>, SortHelper<Student>>();
 
