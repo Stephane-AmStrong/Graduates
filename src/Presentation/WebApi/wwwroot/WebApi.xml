@@ -1,0 +1,122 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>WebApi</name>
+    </assembly>
+    <members>
+        <member name="M:WebApi.Controllers.v1.DimplomasController.Get(Application.Features.Dimplomas.Queries.GetPagedList.GetDimplomasQuery)">
+            <summary>
+            return dimplomas that matche the criteria
+            </summary>
+            <param name="dimplomasQuery"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApi.Controllers.v1.DimplomasController.Get(System.Guid)">
+            <summary>
+            Retreives a specific Dimploma.
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApi.Controllers.v1.DimplomasController.Post(Application.Features.Dimplomas.Commands.Create.CreateDimplomaCommand)">
+            <summary>
+            Creates a Dimploma.
+            </summary>
+            <param name="command"></param>
+            <returns>A newly created Dimploma</returns>
+            <response code="201">Returns the newly created command</response>
+            <response code="400">If the command is null</response>            
+        </member>
+        <member name="M:WebApi.Controllers.v1.DimplomasController.Put(System.Guid,Application.Features.Dimplomas.Commands.Update.UpdateDimplomaCommand)">
+            <summary>
+            Update a specific Dimploma.
+            </summary>
+            <param name="id"></param>
+            <param name="command"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApi.Controllers.v1.DimplomasController.Delete(System.Guid)">
+            <summary>
+            Deletes a specific Dimploma.
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApi.Controllers.v1.GraduatesController.Get(Application.Features.Graduates.Queries.GetPagedList.GetGraduatesQuery)">
+            <summary>
+            return graduates that matche the criteria
+            </summary>
+            <param name="graduatesQuery"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApi.Controllers.v1.GraduatesController.Get(System.Guid)">
+            <summary>
+            Retreives a specific Graduate.
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApi.Controllers.v1.GraduatesController.Post(Application.Features.Graduates.Commands.Create.CreateGraduateCommand)">
+            <summary>
+            Creates a Graduate.
+            </summary>
+            <param name="command"></param>
+            <returns>A newly created Graduate</returns>
+            <response code="201">Returns the newly created command</response>
+            <response code="400">If the command is null</response>            
+        </member>
+        <member name="M:WebApi.Controllers.v1.GraduatesController.Put(System.Guid,Application.Features.Graduates.Commands.Update.UpdateGraduateCommand)">
+            <summary>
+            Update a specific Graduate.
+            </summary>
+            <param name="id"></param>
+            <param name="command"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApi.Controllers.v1.GraduatesController.Delete(System.Guid)">
+            <summary>
+            Deletes a specific Graduate.
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApi.Controllers.v1.StudentsController.Get(Application.Features.Students.Queries.GetPagedList.GetStudentsQuery)">
+            <summary>
+            return students that matche the criteria
+            </summary>
+            <param name="studentsQuery"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApi.Controllers.v1.StudentsController.Get(System.Guid)">
+            <summary>
+            Retreives a specific Student.
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApi.Controllers.v1.StudentsController.Post(Application.Features.Students.Commands.Create.CreateStudentCommand)">
+            <summary>
+            Creates a Student.
+            </summary>
+            <param name="command"></param>
+            <returns>A newly created Student</returns>
+            <response code="201">Returns the newly created command</response>
+            <response code="400">If the command is null</response>            
+        </member>
+        <member name="M:WebApi.Controllers.v1.StudentsController.Put(System.Guid,Application.Features.Students.Commands.Update.UpdateStudentCommand)">
+            <summary>
+            Update a specific Student.
+            </summary>
+            <param name="id"></param>
+            <param name="command"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApi.Controllers.v1.StudentsController.Delete(System.Guid)">
+            <summary>
+            Deletes a specific Student.
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
